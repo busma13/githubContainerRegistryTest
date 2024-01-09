@@ -82,11 +82,12 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}-${{ matrix.version }}
+          tags: ${{ steps.meta.outputs.tags }}-node${{ matrix.version }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: "NODE_VERSION=${{ matrix.version }}"
+          provenance: false
           outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=My multi-arch image
 
 
