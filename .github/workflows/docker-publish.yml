@@ -27,7 +27,7 @@ jobs:
     strategy:
       matrix:
         # NOTE: These versions must be kept in sync with the release.yml
-        version: ["16.20.2", "18.18.2", "20.8.1"]
+        version: ["20.8.1"] # "16.20.2", "18.18.2", 
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -86,7 +86,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/arm64,linux/amd64
           build-args: "NODE_VERSION=${{ matrix.version }}"
           outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=My multi-arch image
 
