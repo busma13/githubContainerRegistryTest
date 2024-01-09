@@ -87,6 +87,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: "NODE_VERSION=${{ matrix.version }}"
+          platforms: linux/arm64,linux/amd64
           provenance: false
           outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=My multi-arch image
 
