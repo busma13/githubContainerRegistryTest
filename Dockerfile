@@ -1,4 +1,4 @@
-from debian:bullseye
+FROM debian:bullseye
 
 LABEL org.opencontainers.image.source = "https://github.com/busma13/githubContainerRegistryTest"
 LABEL org.opencontainers.image.description="testImageForGHCR"
